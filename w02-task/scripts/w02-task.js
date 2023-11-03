@@ -33,3 +33,7 @@ foodElement.innerHTML += `<br>${favFoods}`;
 favFoods.pop();
 foodElement.innerHTML += `<br>${favFoods}`;
 
+//links
+//document.querySelector(`<a href="w01-task.html">W1 Task</a>`).setAttribute(`href`, `../w01-task/w01-task-html`);
+document.querySelector(`#menu > li:nth-child(3) > a`).setAttribute(`href`, `../w01-task/w01-task.html`);
+document.querySelector(`#menu > li:nth-child(4) > a`).setAttribute(`href`, `../w03-task/w03-task.html`);
