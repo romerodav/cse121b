@@ -117,5 +117,4 @@ document.querySelector('#sumOfMultiplied').innerHTML = numbersArray.map(number =
 document.querySelector(`#menu > li:nth-child(2) > a`).setAttribute(`href`, `../test.html`);
 document.querySelector(`#menu > li:nth-child(3) > a`).setAttribute(`href`, `../w01-task/w01-task.html`);
 document.querySelector(`#menu > li:nth-child(5) > a`).setAttribute(`href`, `../w04-task/w04-task.html`);
-//document.querySelector(`#body > table > tbody > tr:nth-child(12) > td.line-content > span > a`).setAttribute(`href`, `../w02-task/styles/main.css`);
-//document.querySelector(`#/html/body/table/tbody/tr[12]/td[2]/span/a`).setAttribute(`href`, `../w02-task/styles/main.css`);
+document.querySelector(`head > link:nth-child(7)`).setAttribute(`href`, `../w02-task/styles/main.css`);

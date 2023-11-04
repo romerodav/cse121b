@@ -21,3 +21,6 @@ function total(...theNumbers) {
 	}
 	return sum
 }
+
+//Links correction
+document.querySelector(`head > link:nth-child(7)`).setAttribute(`href`, `../w02-task/styles/main.css`);

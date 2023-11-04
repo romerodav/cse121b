@@ -91,5 +91,4 @@ myProfile.placesLived.forEach(lived =>
 document.querySelector(`#menu > li:nth-child(2) > a`).setAttribute(`href`, `../test.html`);
 document.querySelector(`#menu > li:nth-child(3) > a`).setAttribute(`href`, `../w01-task/w01-task.html`);
 document.querySelector(`#menu > li:nth-child(4) > a`).setAttribute(`href`, `../w03-task/w03-task.html`);
-//document.querySelector(`body > table > tbody > tr:nth-child(12) > td.line-content > span > a`).setAttribute(`href`, `../w02-task/styles/main.css`);
-//document.querySelector(`a.html-attribute-value.html-resource-link`).setAttribute(`href`, `../w02-task/styles/main.css`);
+document.querySelector(`head > link:nth-child(7)`).setAttribute(`href`, `../w02-task/styles/main.css`);
