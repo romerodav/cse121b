@@ -38,3 +38,4 @@ foodElement.innerHTML += `<br>${favFoods}`;
 document.querySelector(`#menu > li:nth-child(3) > a`).setAttribute(`href`, `../w01-task/w01-task.html`);
 document.querySelector(`#menu > li:nth-child(4) > a`).setAttribute(`href`, `../w03-task/w03-task.html`);
 document.querySelector(`#menu > li:nth-child(5) > a`).setAttribute(`href`, `../w04-task/w04-task.html`);
+document.querySelector(`#menu > li:nth-child(6) > a`).setAttribute(`href`, `../w05-task/w05-task.html`);
