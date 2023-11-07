@@ -92,3 +92,4 @@ document.querySelector(`#menu > li:nth-child(2) > a`).setAttribute(`href`, `../t
 document.querySelector(`#menu > li:nth-child(3) > a`).setAttribute(`href`, `../w01-task/w01-task.html`);
 document.querySelector(`#menu > li:nth-child(4) > a`).setAttribute(`href`, `../w03-task/w03-task.html`);
 document.querySelector(`head > link:nth-child(7)`).setAttribute(`href`, `../w02-task/styles/main.css`);
+document.querySelector(`body > script:nth-child(4)`).setAttribute(`src`, `../w02-task/scripts/main.js`);
