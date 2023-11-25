@@ -45,7 +45,6 @@ function reset(temples)
 }
 
 /* sortBy Function */
-
 const sortBy = (temples) =>
 {
     reset(temples);
