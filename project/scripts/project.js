@@ -1,73 +1,82 @@
 /* Project: Programming Tasks */
 
 /* Declare and initialize global variables */
-const templesElement = document.getElementById(`temples`);
-let templeList = [], templeCopy = [];
+const digimonElement = document.getElementById(`digimones`);
+let digimonList = [], digimonCopy = [];
 
-/* async displayTemples Function */
-const displayTemples = (temples) =>
+/* async displaydigimon Function */
+const displaydigimon = (digimones) =>
 {
-    temples.forEach((temple) =>
+    digimones.forEach((digimon) =>
         {
             let article = document.createElement('article');
             let h3 = document.createElement('h3');
-            let textNode = document.createTextNode(temple.templeName);            ;
+            let textNode = document.createTextNode(digimon.name);            ;
             h3.appendChild(textNode);
             let img = document.createElement(`img`);
-            img.src = temple.imageUrl;
-            img.alt = temple.location;
+            img.src = digimon.img;
+            img.alt = digimon.level;
             article.appendChild(h3);
             article.appendChild(img);
-            templesElement.appendChild(article);
+            digimonElement.appendChild(article);
         })
 }
 
-/* async getTemples Function using fetch()*/
-const getTemples = async () =>
+/* async getdigimon Function using fetch()*/
+const getDigimon = async () =>
 {
-    const response = await fetch(`https://byui-cse.github.io/cse121b-ww-course/resources/temples.json`);
+    const response = await fetch(`https://digimon-api.vercel.app/api/digimon`);
     if (response.ok)
     {
-        templeList = await response.json();
-        templeCopy = [].concat(templeList);
-        displayTemples(templeList);
+        digimonList = await response.json();
+        digimonCopy = [].concat(digimonList);
+        displaydigimon(digimonList);
     }
 }
 
 /* reset Function */
-function reset(temples)
+function reset(digimones)
 {
-    while(temples.length > 0)
+    while(digimones.length > 0)
     {
-        temples.pop();
-        document.getElementById(`temples`).innerHTML=``;
+        digimones.pop();
+        document.getElementById(`digimones`).innerHTML=``;
     }
 }
 
 /* sortBy Function */
 
-const sortBy = (temples) =>
+const sortBy = (digimones) =>
 {
-    reset(temples);
+    reset(digimones);
     const sortByValue = document.getElementById(`sortBy`);
     const filter = sortByValue.value;
-    temples = [].concat(templeCopy);
+    digimones = [].concat(digimonCopy);
     switch (filter)
     {
-        case `utah`:
-            temples = temples.filter((temple) => temple.location.includes(`Utah`));
-          break;
-        case `notutah`:
-            temples = temples.filter((temple) => !temple.location.includes(`Utah`));
-          break;
-        case `older`:
-            temples = temples.filter((temple) => Date.parse(temple.dedicated) < Date.parse(1950, 0, 1));
-    }
-    displayTemples(temples);
-    templeList = [].concat(temples);
+        case `intraining`:
+            digimones = digimones.filter((digimon) => digimon.level.includes(`In Training`));
+            break;
+        case `rookie`:
+            digimones = digimones.filter((digimon) => digimon.level.includes(`Rookie`));
+            break;
+        case `champion`:
+            digimones = digimones.filter((digimon) => digimon.level.includes(`Champion`));
+            break
+        case `ultimate`:
+            digimones = digimones.filter((digimon) => digimon.level.includes(`Ultimate`));
+            break;
+        case `mega`:
+            digimones = digimones.filter((digimon) => digimon.level.includes(`Mega`));
+            break;
+        case `armor`:
+            digimones = digimones.filter((digimon) => digimon.level.includes(`Armor`));
+        }
+    displaydigimon(digimones);
+    digimonList = [].concat(digimones);
 }
 
 /* Event Listener */
-document.querySelector("#sortBy").addEventListener("change", () => {sortBy(templeList)});
+document.querySelector("#sortBy").addEventListener("change", () => {sortBy(digimonList)});
 
-getTemples();
+getDigimon();
